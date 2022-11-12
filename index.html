@@ -4,36 +4,45 @@
 		<meta charset="utf-8">
 		<title>NAWA - Group 2</title>
 		
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			p {
+				color: #999;
+			}
+		</style>
+		
 	</head>
 	<body>
 		
 		<header>
-			<img src="images/avatar.jpg" height="150">
-			<h1>Mohammed &nbsp;&nbsp;&nbsp; Safadi</h1>
+			<img id="avatar" src="images/avatar.jpg" height="150">
+			<h1 style="color: #15f; background: #ddd">Mohammed Safadi <small>(Pro)</small></h1>
 			<h3>Full-stack Web Developer</h3>
 		</header>
 		<hr>
-		<section>
-			<h4>Bio</h4>
-			<p><span>Lorem ipsum</span> 
-				<span>dolor sit amet</span> consectetur adipisicing elit.<br>
-				Molestiae illum accusantium fuga eius nihil ullam, 
-				eveniet nobis maiores ad inventore quos totam accusamus voluptate 
-				tempora dolores deleniti earum? Reiciendis, ratione.</p>
+		<section class="v-space box">
+			<div>
+				<h4>Bio</h4>
+				<p><span>Lorem ipsum</span> 
+					<span>dolor sit amet</span> consectetur adipisicing elit.<br>
+					Molestiae illum accusantium fuga eius nihil ullam, 
+					eveniet nobis maiores ad inventore quos totam accusamus voluptate 
+					tempora dolores deleniti earum? Reiciendis, ratione.</p>
 
-			<p><b>Lorem</b> <u>ipsum</u> <i>dolor</i> <ins>sit amet</ins> consectetur adipisicing elit.<br> 
-				Enim blanditiis, laborum omnis itaque asperiores eos quisquam 
-				perferendis nemo <strong><em>reprehenderit</em></strong> <em>aspernatur</em> ut vitae temporibus 
-				iure rerum animi corporis dolores ipsam non.</p>
-			
-			<p><a title="Go to &quot;google&quot;" href="https://www.google.com/search?q=Mohammed" target="_blank">
-				&lt;Find "more"&gt;
-			</a></p>
+				<p><b>Lorem</b> <u>ipsum</u> <i>dolor</i> <ins>sit amet</ins> consectetur adipisicing elit.<br> 
+					Enim blanditiis, laborum omnis itaque asperiores eos quisquam 
+					perferendis nemo <strong><em>reprehenderit</em></strong> <em>aspernatur</em> ut vitae temporibus 
+					iure rerum animi corporis dolores ipsam non.</p>
+				
+				<p><a title="Go to &quot;google&quot;" href="https://www.google.com/search?q=Mohammed" target="_blank">
+					&lt;Find "more"&gt;
+				</a></p>
+			</div>
 		</section>
-
-		<section>
+		
+		<section class="box v-space">
 			<h4>Languages</h4>
-			<ol type="A" start="1">
+			<ol type="I" start="1">
 				<li><strong>Arabic</strong>
 					<ul type="square">
 						<li>Reading: V. Good</li>
@@ -46,7 +55,7 @@
 			</ol>
 		</section>
 		<hr>
-		<section>
+		<section class="box v-space">
 			<h4>Skills</h4>
 			<dl>
 				<dt><abbr title="HyperText Markup Language">HTML</abbr></dt>
@@ -94,6 +103,14 @@
 					</tr>
 				</tfoot>
 			</table>
+		</section>
+		<section class="box v-space">
+			<h4>Social Links</h4>
+			<ul type="square">
+				<li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+				<li><a href="https://linkedin.com" target="_blank">Linked-in</a></li>
+				<li><a href="https://github.com" target="_blank">GitHub</a></li>
+			</ul>
 		</section>
 	</body>
 </html>

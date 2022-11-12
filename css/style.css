@@ -1,0 +1,107 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #111;
+}
+
+p {
+    color: #111;
+}
+
+h1 {
+    color: #fff !important;
+    background-color: #000 !important;
+}
+
+a {
+    text-decoration: none;
+    color:rgb(52, 161, 74);
+}
+
+a:hover {
+    color: #12f;
+    text-decoration: underline;
+}
+
+/*
+This is a comment.
+*/
+section p {
+    color: #000;
+}
+
+#avatar {
+    border-radius: 50%;
+    position: relative;
+    left: 10px;
+    top: 20px;
+}
+
+h4 ~ p {
+    font-size: 1.2rem; /* 1.2 * 16px */
+}
+
+.box h4 + p::first-letter {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+section.box  h4 {
+    background-color: #ddd;
+    color: rgb(52, 161, 74);
+    font-size: 1.5rem;
+    padding: 5px;
+    text-align: end;
+}
+
+section.box h4::after {
+    content: " :";
+    color: #12f;
+}
+
+.box {
+    border: 1px solid #666;
+    padding: 20px;
+    color: #000;
+    background-color: #ff6;
+}
+
+.v-space {
+    margin: 20px 0;
+    color: #12f;
+    background-color: rgb(114, 189, 179);
+}
+
+ol[type="A"] {
+    color: #505;
+}
+
+a[target="_blank"]::after {
+    content: " ->";
+}
+
+a[href*="twitter"] {
+    color: #505;
+}
+
+h1, h3 {
+    display: inline-block;
+}
+
+p strong {
+    /* display: none; */
+    /* visibility: hidden; */
+    background: #000;
+    color: #fff;
+}
+
+h1 small {
+    display: none;
+}
+
+h1:hover small {
+    display: inline;
+}
+
+
+
