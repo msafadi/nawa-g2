@@ -1,17 +1,26 @@
 /* @import url(fonts.css); */
-
-* {
-    box-sizing: border-box;
+@keyframes pulse {
+    0% {
+        background-color: #ffd800;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        transform: rotate(0deg);
+    }
+    50% {
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        transform: rotate(180deg);
+    }
+    100% {
+        background-color: #f26149;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        transform: rotate(360deg);
+    }
 }
 
 html {
     font-family: 'Montserrat Regular', Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #707070; /* rgb(112, 112, 112) */
-}
-
-body {
-    margin: 0;
 }
 
 a {
@@ -111,6 +120,11 @@ a {
     position: absolute;
     top: -60px;
     right: -30px;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
 }
 
 #hero .pricing .pricing-value {
@@ -139,15 +153,7 @@ a {
     box-shadow: 0px 0px 10px #666;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .pkg-item {
-    /* flex-grow: 1;
-    flex-basis: 25%; */
-    flex: 1 25%;
     overflow: hidden;
     padding: 7px;
     position: relative;
@@ -190,4 +196,20 @@ a {
 .pkg-item:hover img {
     transform: scale(130%) rotate(10deg);
     filter: grayscale(1);
+}
+
+@media (max-width: 960px) {
+    
+}
+@media (max-width: 760px) {
+    
+}
+@media (max-width: 480px) {
+    .red {
+        color: #f26149 !important;
+    }
+    
+    #page-header nav#main-nav, .hero-box {
+        display: none !important;
+    }
 }
