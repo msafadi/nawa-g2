@@ -1,0 +1,35 @@
+
+header .navbar .nav-link, header .navbar .nav-link.active {
+    color: #fff;
+}
+
+header .navbar-nav > .nav-item {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin: 0 1rem;
+}
+
+.v-sep {
+    position: relative;
+    padding: 0 1.3rem;
+}
+
+.v-sep::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(50% - 7px);
+    height: 14px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#hero .carousel-item {
+    height: 100vh;
+    overflow: hidden;
+}
+#hero .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
