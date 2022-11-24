@@ -33,3 +33,41 @@ header .navbar-nav > .nav-item {
     height: 100%;
     width: 100%;
 }
+
+#hero .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+#hero .carousel-caption {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /*transform: translateX(-50%) translateY(-50%);*/
+    background-color: rgba(0, 0, 0, 0.4);
+    /*padding: 2rem;*/
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: w-resize;
+}
+
+#hero .carousel-caption .h1 {
+    font-size: 4.5rem;
+    line-height: 4rem;
+}
+
+header .dropdown-menu {
+    background-color: #222;
+}
+
+header .dropdown-item {
+    color: #fff;
+}
+header .dropdown-item:hover {
+    background-color: transparent;
+    color: #ddd;
+}
