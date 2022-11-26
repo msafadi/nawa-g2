@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM & Events</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container py-5">
+        <header class="d-flex mb-4 align-items-center pb-3 border-bottom">
+            <h1 id="title" class="h2" title="This is the H1 title">My Tasks</h1>
+            <div class="ms-auto">
+                <a href="https://google.com" class="btn btn-primary" id="add-task">Add Task</a>
+                <button class="btn btn-danger">Clear</button>
+            </div>
+        </header>
+        <div class="d-none bg-light p-3" id="add-box">
+            <form action="" class="d-flex" id="add-form">
+                <div>
+                    <input type="text" class="form-control" placeholder="Enter task title">
+                    <p></p>
+                </div>
+                <button class="btn btn-primary ms-2">Add to List</button>
+            </form>
+        </div>
+
+        <ul id="tasks"></ul>
+    </div>
+
+    <script src="js/tasks.js"></script>
+    <script>
+        // let title = "This is a title!";
+        // // Function declartion
+        // function showTitle(event) {
+        //     console.log(event)
+            
+        //     alert( event.target.title );
+        // }
+        // function call
+        // showTitle('black');
+        // console.log( title ) ;
+
+        let h1 = document.getElementById('title');
+        let size = 30;
+        let c = 0;
+        let title;
+        h1.addEventListener('click', function(event) {
+            if (c == 0) {
+                title = this.innerHTML;
+            }
+            this.innerHTML = title + " (" + ++c + ")";
+            size = size * 1.5;
+            if (size < 72) {
+                this.style.fontSize = size + 'px';
+            }
+            if (this.style.color != 'red') {
+                this.style.color = "red"
+            } else {
+                this.style.color = 'black';
+            }
+        });
+    </script>
+    
+</body>
+</html>
