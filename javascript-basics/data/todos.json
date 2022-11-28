@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "Learn HTML",
+        "tags": ["web", "html"]
+    },
+    {
+        "id": 2,
+        "title": "Learn CSS",
+        "tags": ["web", "css"]
+    },
+    {
+        "id": 3,
+        "title": "Learn JavaScript",
+        "tags": ["web", "html"]
+    }
+]

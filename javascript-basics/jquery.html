@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="container py-5">
+        <header class="d-flex mb-4 align-items-center pb-3 border-bottom">
+            <h1 id="title" class="h2" title="This is the H1 title">My Tasks</h1>
+            <div class="ms-auto">
+                <button class="btn btn-dark" id="load-data">Load Data</button>
+                <button class="btn btn-danger">Clear</button>
+            </div>
+        </header>
+        <h1 id="title" class="h2" title="This is the H1 title">My Tasks</h1>
+        <h1 id="title" class="h2" title="This is the H1 title">My Tasks</h1>
+        <div class="bg-light p-3" id="add-box">
+            <form action="" class="d-flex" id="add-form">
+                <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Enter task title">
+                    <p></p>
+                </div>
+                <div>
+                    <button class="btn btn-primary ms-2">Add to List</button>
+                </div>
+            </form>
+        </div>
+
+        <ul id="tasks"></ul>
+    </div>
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('header h1')
+                .css('color', 'red')
+                .css('font-size', '3rem')
+                .addClass('bg-dark')
+                .html('<i>Todo List</i>')
+                .fadeOut(2000)
+                .fadeIn();
+            
+            alert( $('header h1').attr('title') );
+        })
+
+    </script>
+
+</body>
+</html>
