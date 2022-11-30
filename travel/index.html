@@ -132,5 +132,22 @@
         </div>
     </section>
 
+    <script>
+    
+        // window.addEventListener('scroll', function(e) {
+        //     const hero = document.querySelector('#hero');
+        //     console.log(document.body.scrollTop)
+        // });
+
+        window.onscroll = function() {
+            const h = document.querySelector('#page-header');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                h.classList.add('bg')
+            } else {
+                h.classList.remove('bg')
+            }
+        }
+    </script>
+
 </body>
 </html>

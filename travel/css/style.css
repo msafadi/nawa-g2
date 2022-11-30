@@ -33,12 +33,20 @@ a {
     flex-direction: row;
     align-items: center;
     padding: 1.5rem 8%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 99;
+    transition: all 0.3s ease;
 }
+#page-header.bg {
+    background-color: #000;
+    border-bottom: 0;
+    padding: 1.3rem 8%;
+}
+
 #page-header #logo {
     flex: 1;
 }
