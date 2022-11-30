@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/light.css" id="css-mode">
     
 </head>
 <body>
@@ -15,10 +16,9 @@
             <div class="ms-auto">
                 <button class="btn btn-dark" id="load-data">Load Data</button>
                 <button class="btn btn-danger">Clear</button>
+                <button class="btn btn-light">Change Mode</button>
             </div>
         </header>
-        <h1 id="title" class="h2" title="This is the H1 title">My Tasks</h1>
-        <h1 id="title" class="h2" title="This is the H1 title">My Tasks</h1>
         <div class="bg-light p-3" id="add-box">
             <form action="" class="d-flex" id="add-form">
                 <div class="col-6">
@@ -31,7 +31,14 @@
             </form>
         </div>
 
-        <ul id="tasks"></ul>
+        <ul id="tasks">
+            <li>Task #1 - 
+                <a href="#" class="text-danger">Delete</a>
+            </li>
+            <li>Task #2 - 
+                <a href="#" class="text-danger">Delete</a>
+            </li>
+        </ul>
     </div>
 
     <script src="js/jquery-3.6.1.min.js"></script>
@@ -45,8 +52,86 @@
                 .fadeOut(2000)
                 .fadeIn();
             
-            alert( $('header h1').attr('title') );
-        })
+            //alert( $('header h1').attr('title') );
+
+            // Add Event Listener
+            $('#add-form').on('submit', function(e) {
+                e.preventDefault();
+                let input = $('#add-form input');
+
+                let data = {
+                    userId: 2,
+                    title: input.val(),
+                    completed: 0
+                }
+                // Send data to server via AJAX (POST request)
+                $.post(
+                    "https://jsonplaceholder.typicode.com/todos",
+                    data,
+                    function (data) {
+                        $('#tasks').prepend(`<li>${data.title} (${data.id}) - 
+                            <a href="#" class="text-danger">Delete</a>
+                        </li>`);
+                        input.val('');
+                    }
+                );
+                
+                // let content = $('#tasks').html();
+                // $('#tasks').html('<li>' + val + '</li>' + content);
+                // $('#tasks').prepend(`<li>${input.val()} - 
+                //         <a href="#" class="text-danger">Delete</a>
+                //     </li>`); // Try: append
+
+                
+            });
+
+            $('header .btn-danger').on('click', function() {
+                let answer = confirm('Are you sure you want to clear all the list?');
+                if (answer) {
+                    $('#tasks').empty();
+                }
+            });
+
+            // Event Delegation
+            $('#tasks').on('click', '.text-danger', function(e) {
+                e.preventDefault();
+                $(this).parent().remove();
+            });
+
+            $('#load-data').on('click', function() {
+                $.get("https://jsonplaceholder.typicode.com/todos", function (data) {
+                    for(i in data) {
+                        $('#tasks').prepend(`<li>${data[i].title} - 
+                            <a href="#" class="text-danger">Delete</a>
+                        </li>`);
+                    }
+                });
+
+                // $.ajax({
+                //     url: "https://jsonplaceholder.typicode.com/todos",
+                //     method: "get"
+                // })
+                // .done(function (data) {
+                //     for(i in data) {
+                //         $('#tasks').prepend(`<li>${data[i].title} - 
+                //             <a href="#" class="text-danger">Delete</a>
+                //         </li>`);
+                //     }
+                // })
+                // .fail(function() {
+                //     alert('Error!')
+                // });
+            });
+
+            $('.btn-light').on('click', function() {
+                let v = $('#css-mode').attr('href');
+                if (v == 'css/dark.css') {
+                    $('#css-mode').attr('href', 'css/light.css');
+                } else {
+                    $('#css-mode').attr('href', 'css/dark.css');
+                }  
+            })
+        });
 
     </script>
 
